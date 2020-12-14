@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/dashboard.577554d3.css"
   },
   {
-    "revision": "8ccbd2fb740ba7db6945cdf086b19fdc",
+    "revision": "8c71471d56b0bc170c686768999f84fc",
     "url": "index.html"
   },
   {
