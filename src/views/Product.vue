@@ -165,6 +165,7 @@ export default defineComponent({
 .details__gallery {
   @apply bg-dark bg-cover bg-center;
   min-height: 18rem;
+  cursor: zoom-in;
 }
 
 .details__gallery:hover {
