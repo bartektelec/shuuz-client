@@ -9,9 +9,11 @@
     <div class="details">
       <div
         class="details__gallery"
+        @mousemove="handleZoom"
+        @mouseout="e => (e.target.style.backgroundPosition = '')"
         :style="{
           backgroundImage: `url(${itemData.image_url ||
-            api + itemData.image.url}`
+            api + itemData.image.url}`,
         }"
       ></div>
       <div class="details__content">
@@ -78,15 +80,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import { useStore } from "vuex";
+import { defineComponent, computed, ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
-import ProductGrid from "@/components/organisms/ProductGrid.vue";
+import ProductGrid from '@/components/organisms/ProductGrid.vue';
 
 export default defineComponent({
   components: { ProductGrid },
-  setup(props) {
+  setup() {
     const route = useRoute();
     const store = useStore();
     const router = useRouter();
@@ -96,17 +98,25 @@ export default defineComponent({
       store.getters.getProductById(route.params.id)
     );
 
+    function handleZoom(event: MouseEvent) {
+      const target = event.target as HTMLDivElement;
+      const width = (event.offsetX / target.clientWidth) * 100;
+      const height = (event.offsetY / target.clientHeight) * 100;
+      target.style.backgroundPosition = `${width}% ${height}%`;
+    }
+
     const favourite = computed(() =>
       store.state.favourites.includes(itemData.value.id)
     );
-    if (!itemData.value) router.push("/error");
+    if (!itemData.value) router.push('/error');
     return {
       isDescriptionOpen,
       itemData,
       favourite,
-      api
+      api,
+      handleZoom,
     };
-  }
+  },
 });
 </script>
 
@@ -155,6 +165,10 @@ export default defineComponent({
 .details__gallery {
   @apply bg-dark bg-cover bg-center;
   min-height: 18rem;
+}
+
+.details__gallery:hover {
+  background-size: 350%;
 }
 
 .details__content {
