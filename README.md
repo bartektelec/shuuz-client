@@ -10,8 +10,6 @@ shoe e-commerce website
 
 - Own design [[FIGMA]](https://www.figma.com/file/JIEGuhFMZKXWpo3ofxb6QF/Semester-project-2-Online-store?node-id=0%3A1)
 - Vue3 + Vuex store
-- Tailwind CSS
-- Axios
 - Strapi as a back-end
 - JWT Auth
 - Products can be added, edited and deleted by admin user.
@@ -21,8 +19,9 @@ shoe e-commerce website
 
 ## Credits
 
-- [Vue 3](https://v3.vuejs.org/)
-- [Vuex 4](https://vuex.vuejs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [<img height="16px" src="https://raw.githubusercontent.com/tomchen/stack-icons/3d586ebac68a43c8358d030ee96c9e07afeff489/logos/tailwindcss-icon.svg" alt="tailwind logo" /> TailwindCSS](https://tailwindcss.com/)
+- [<img height="16px" src="https://raw.githubusercontent.com/tomchen/stack-icons/3d586ebac68a43c8358d030ee96c9e07afeff489/logos/typescript-icon.svg" alt="typescript logo" /> TypeScript](https://www.typescriptlang.org/)
+- [<img height="16px" src="https://raw.githubusercontent.com/tomchen/stack-icons/3d586ebac68a43c8358d030ee96c9e07afeff489/logos/vue.svg" alt="vue logo" /> Vue 3](https://v3.vuejs.org/)
+- [<img height="16px" src="https://raw.githubusercontent.com/tomchen/stack-icons/3d586ebac68a43c8358d030ee96c9e07afeff489/logos/vue.svg" alt="vue logo" /> Vuex 4](https://vuex.vuejs.org/)
+- [<img height="16px" src="https://raw.githubusercontent.com/tomchen/stack-icons/3d586ebac68a43c8358d030ee96c9e07afeff489/logos/strapi.svg" alt="strapi logo" /> Strapi](https://strapi.io/)
 - [Eva-Icons](https://akveo.github.io/eva-icons/#/)
-- [Strapi](https://strapi.io/)
