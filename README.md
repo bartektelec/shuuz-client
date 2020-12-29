@@ -2,7 +2,7 @@
 
 shoe e-commerce website
 
-## [LIVE DEMO](http://bartektelec.github.io/shuuz-client/)
+## [LIVE DEMO](http://bartektelec.github.io/shuuz-client/) - backend is stored on heroku, may take a while for server to start when app is launched first time
 
 <img src="screenshot.jpg" width="80%" alt="Shuuz homescreen"/>
 
