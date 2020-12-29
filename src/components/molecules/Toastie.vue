@@ -17,38 +17,38 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   props: {
     error: {
-      type: Boolean as PropType<boolean>
+      type: Boolean as PropType<boolean>,
     },
     icon: {
-      type: String as PropType<string>
+      type: String as PropType<string>,
     },
     toastId: {
-      type: Number
-    }
+      type: Number,
+    },
   },
 
   data() {
     return {
       show: true,
-      counter: setTimeout("", 0)
+      counter: setTimeout('', 0),
     };
   },
 
   methods: {
     killSelf() {
       clearTimeout(this.counter);
-      this.$store.commit("removeToast", this.toastId);
+      this.$store.commit('removeToast', this.toastId);
       this.show = false;
-    }
+    },
   },
 
   beforeMount() {
-    this.counter = setTimeout(this.killSelf, 15000);
+    this.counter = setTimeout(this.killSelf, 5000);
   },
 
   beforeUnmount() {
@@ -56,14 +56,14 @@ export default defineComponent({
   },
   setup() {
     return {};
-  }
+  },
 });
 </script>
 
 <style lang="postcss" scoped>
 .toastie__alert {
   @apply inline-flex shadow-sm relative;
-  animation: dropDown 15s cubic-bezier(0.18, 0.89, 0.32, 1.27);
+  animation: dropDown 5s cubic-bezier(0.18, 0.89, 0.32, 1.27);
 }
 
 .toastie__bar {
@@ -71,7 +71,7 @@ export default defineComponent({
   height: 4px;
   backdrop-filter: brightness(80%);
   transform-origin: left center;
-  animation: preloader 14s linear;
+  animation: preloader 4.8s linear;
 }
 
 .toastie__close {
@@ -94,12 +94,12 @@ export default defineComponent({
     opacity: 0;
   }
 
-  5% {
+  10% {
     transform: translateY(0);
     opacity: 1;
   }
 
-  95% {
+  90% {
     transform: translateY(0);
     opacity: 1;
   }
