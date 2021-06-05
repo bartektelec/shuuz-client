@@ -48,7 +48,7 @@ export default defineComponent({
   padding-bottom: 7rem;
   display: grid;
   justify-items: stretch;
-  gap: 4rem 5rem;
+  gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 </style>

@@ -70,7 +70,7 @@
               { value: 'nameAsc', name: 'Name A-Z' },
               { value: 'nameDec', name: 'Name Z-A' },
               { value: 'priceAsc', name: 'Price low-high' },
-              { value: 'priceDec', name: 'Price high-low' }
+              { value: 'priceDec', name: 'Price high-low' },
             ]"
           />
         </div>
