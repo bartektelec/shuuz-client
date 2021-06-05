@@ -48,7 +48,7 @@ export default defineComponent({
   },
 
   beforeMount() {
-    this.counter = setTimeout(this.killSelf, 5000);
+    this.counter = setTimeout(this.killSelf, 3000);
   },
 
   beforeUnmount() {
@@ -63,7 +63,7 @@ export default defineComponent({
 <style lang="postcss" scoped>
 .toastie__alert {
   @apply inline-flex shadow-sm relative;
-  animation: dropDown 5s cubic-bezier(0.18, 0.89, 0.32, 1.27);
+  animation: dropDown 3s cubic-bezier(0.18, 0.89, 0.32, 1.27);
 }
 
 .toastie__bar {
@@ -71,7 +71,7 @@ export default defineComponent({
   height: 4px;
   backdrop-filter: brightness(80%);
   transform-origin: left center;
-  animation: preloader 4.8s linear;
+  animation: preloader 3s linear;
 }
 
 .toastie__close {
