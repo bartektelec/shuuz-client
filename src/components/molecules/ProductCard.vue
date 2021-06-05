@@ -1,58 +1,57 @@
 <template>
-  <div class="wrapper hover:text-dark-light">
-    <div
-      class="header bg-light-light"
-      :style="{
-        backgroundImage: `url('${data.image_url ||
-          api + data.image.formats.thumbnail.url}')`
-      }"
-    >
+  <router-link
+    :to="editable ? `/dashboard/edit/${data.id}` : `/product/${data.id}`"
+  >
+    <div class="wrapper hover:text-dark-light">
       <div
-        v-if="!hideFavIcon && !editable"
-        class="cursor-pointer inline-block m-2"
-        @click="$store.dispatch('addFavourite', data.id)"
+        class="header bg-light-light"
+        :style="{
+          backgroundImage: `url('${data.image_url ||
+            api + data.image.formats.thumbnail.url}')`
+        }"
       >
-        <icon
-          :fill="favourite ? 'secondary' : 'light'"
-          outline
-          :name="favourite ? 'heart' : 'heart-outline'"
-        ></icon>
+        <div
+          v-if="!hideFavIcon && !editable"
+          class="cursor-pointer inline-block m-2"
+        >
+          <icon
+            :fill="favourite ? 'secondary' : 'light'"
+            outline
+            :name="favourite ? 'heart' : 'heart-outline'"
+          ></icon>
+        </div>
       </div>
-    </div>
-    <router-link
-      :to="editable ? `/dashboard/edit/${data.id}` : `/product/${data.id}`"
-    >
       <div class="footer">
         <h2 class="title">{{ data.title }}</h2>
         <p class="brand">{{ data.brand }}</p>
         <p class="price">${{ data.price }}</p>
       </div>
-    </router-link>
-    <div v-if="editable">
-      <div v-if="!confirmDelete">
-        <base-button @click="confirmDelete = true" variant="dark"
-          >Delete</base-button
-        >
-      </div>
-      <div v-else class="flex justify-between">
-        <base-button @click="confirmDelete = false" outline variant="primary"
-          >Cancel</base-button
-        >
-        <base-button
-          @click="$store.dispatch('deleteProduct', data.id)"
-          variant="error"
-          >Confirm</base-button
-        >
+      <div v-if="editable">
+        <div v-if="!confirmDelete">
+          <base-button @click="confirmDelete = true" variant="dark"
+            >Delete</base-button
+          >
+        </div>
+        <div v-else class="flex justify-between">
+          <base-button @click="confirmDelete = false" outline variant="primary"
+            >Cancel</base-button
+          >
+          <base-button
+            @click="$store.dispatch('deleteProduct', data.id)"
+            variant="error"
+            >Confirm</base-button
+          >
+        </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref, computed } from "vue";
-import { useStore } from "vuex";
-import { Product } from "@/model/State";
-import Icon from "@/components/atoms/Icon.vue";
+import { defineComponent, PropType, ref, computed } from 'vue';
+import { useStore } from 'vuex';
+import { Product } from '@/model/State';
+import Icon from '@/components/atoms/Icon.vue';
 
 export default defineComponent({
   components: { Icon },
