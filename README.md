@@ -6,7 +6,7 @@ shoe e-commerce website
 
 ## Features
 
-- Own design [[FIGMA]](https://www.figma.com/file/JIEGuhFMZKXWpo3ofxb6QF/Semester-project-2-Online-store?node-id=0%3A1)
+- Own design
 - Vue3 + Vuex store
 - Strapi as a back-end
 - JWT Auth
